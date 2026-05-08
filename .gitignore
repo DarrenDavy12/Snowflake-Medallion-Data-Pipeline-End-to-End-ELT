@@ -1,9 +1,10 @@
 # =========================
-# Python virtual environments
+# Python virtual environments and sample data
 # =========================
 venv/
 .env/
 .venv/
+.sample_data/
 
 # =========================
 # Python cache files
