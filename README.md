@@ -24,7 +24,7 @@ D --> D2[DIM_PRODUCTS]
 D --> D3[DIM_DATE]
 D --> D4[FACT_ORDERS]
 
-D --> E[BI / Analytics Layer<br/>Dashboards & KPIs]
+D --> E[Data ready for BI / Analytics Layer<br/>Dashboards & KPIs]
 ```
 
 ELT FLOW 
