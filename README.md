@@ -13,7 +13,7 @@ The pipeline includes data ingestion, transformation, modelling, and validation 
 ```mermaid
 flowchart TD
 
-A[External Source: <br>AWS S3<br/>customers.csv] -->|Extract| B[Bronze Layer<br/>Raw ingestion table<br/>CUSTOMERS_RAW]
+A[External Source <br>AWS S3<br/>customers.csv] -->|Extract| B[Bronze Layer<br/>Raw ingestion table<br/>CUSTOMERS_RAW]
 
 B -->|Load| C[Silver Layer<br/>Cleaned & validated<br/>CUSTOMERS_CLEAN]
 
