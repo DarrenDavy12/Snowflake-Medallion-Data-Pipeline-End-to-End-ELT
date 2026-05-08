@@ -10,88 +10,22 @@ The pipeline includes data ingestion, transformation, modelling, and validation 
 
 🏗️ Architecture
 
-──────────────────────────────────────────────────────────────────────────────
-                    ┌──────────────────────────┐
-                    │     External Source      │
-                    │      AWS S3 Bucket       │
-                    │     customers.csv        │
-                    └────────────┬─────────────┘
-                                │
-                            (E) EXTRACT
-                                │
-                                ▼
-┌────────────────────────────────────────────────────────────────────────────┐
-│                            BRONZE LAYER                                    │
-│                                                                            │
-│  Purpose: Raw ingestion layer                                              │
-│                                                                            │
-│  Table: BRONZE.CUSTOMERS_RAW                                               │
-│                                                                            │
-│  - Raw source data                                                         │
-│  - No major transformations                                                │
-│  - Historical preservation                                                 │
-│  - load_timestamp tracking                                                 │
-└───────────────────────────────┬────────────────────────────────────────────┘
-                                │
-                                │
-                         (L) LOAD INTO
-                         SNOWFLAKE LAYER
-                                │
-                                ▼
-┌────────────────────────────────────────────────────────────────────────────┐
-│                            SILVER LAYER                                    │
-│                                                                            │
-│  Purpose: Cleaned and validated data                                       │
-│                                                                            │
-│  Table: SILVER.CUSTOMERS_CLEAN                                             │
-│                                                                            │
-│  Transformations:                                                          │
-│  - TRIM whitespace                                                         │
-│  - LOWER email standardisation                                             │
-│  - Remove duplicates                                                       │
-│  - Filter NULL emails                                                      │
-│  - Data quality validation                                                 │
-│  - MERGE / incremental logic                                               │
-│                                                                            │
-│                         ← (T) TRANSFORM                                    │
-└───────────────────────────────┬────────────────────────────────────────────┘
-                                │
-                                ▼
-┌────────────────────────────────────────────────────────────────────────────┐
-│                              GOLD LAYER                                    │
-│                                                                            │
-│  Purpose: Business-ready analytical model                                  │
-│                                                                            │
-│  DIMENSION TABLES                                                          │
-│  ─────────────────                                                         │
-│  • DIM_CUSTOMERS                                                           │
-│  • DIM_PRODUCTS                                                            │
-│  • DIM_DATE                                                                │
-│                                                                            │
-│  FACT TABLES                                                               │
-│  ───────────                                                               │
-│  • FACT_ORDERS                                                             │
-│                                                                            │
-│  Business Logic:                                                           │
-│  - Star schema modelling                                                   │
-│  - Aggregations                                                            │
-│  - Reporting optimisation                                                  │
-│  - Analytical querying                                                     │
-│                                                                            │
-│                         ← (T) TRANSFORM                                    │
-└───────────────────────────────┬────────────────────────────────────────────┘
-                                │
-                                ▼
-                   ┌──────────────────────────────┐
-                   │      BI / Analytics Layer    │
-                   │                              │
-                   │  - Dashboards                │
-                   │  - KPIs                      │
-                   │  - Reporting                 │
-                   │  - Business Insights         │
-                   └──────────────────────────────┘
+```mermaid
+flowchart TD
 
-──────────────────────────────────────────────────────────────────────────────
+A[External Source: AWS S3<br/>customers.csv] -->|Extract| B[Bronze Layer<br/>Raw ingestion table<br/>CUSTOMERS_RAW]
+
+B -->|Load| C[Silver Layer<br/>Cleaned & validated<br/>CUSTOMERS_CLEAN]
+
+C -->|Transform| D[Gold Layer<br/>Star Schema Model]
+
+D --> D1[DIM_CUSTOMERS]
+D --> D2[DIM_PRODUCTS]
+D --> D3[DIM_DATE]
+D --> D4[FACT_ORDERS]
+
+D --> E[BI / Analytics Layer<br/>Dashboards & KPIs]
+```
 
 ELT FLOW 
 
