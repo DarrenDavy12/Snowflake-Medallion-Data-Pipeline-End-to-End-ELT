@@ -43,7 +43,6 @@ T = Transform
     - Star schema modelling
     - Aggregations
 
-──────────────────────────────────────────────────────────────────────────────
 
 
 ⚙️ Tech Stack
