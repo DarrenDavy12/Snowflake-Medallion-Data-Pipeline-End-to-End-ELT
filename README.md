@@ -1,4 +1,4 @@
-Snowflake Medallion Architecture Data Pipeline (End-to-End ELT Project)
+# Snowflake Medallion Architecture Data Pipeline (End-to-End ELT Project)
 
 
 📖 Overview
@@ -27,6 +27,8 @@ D --> D4[FACT_ORDERS]
 D --> E[Data ready for BI / Analytics Layer<br/>Dashboards & KPIs]
 ```
 
+
+```
 ELT FLOW 
 
 E = Extract
@@ -42,7 +44,7 @@ T = Transform
     - MERGE logic
     - Star schema modelling
     - Aggregations
-
+```
 
 
 ⚙️ Tech Stack
