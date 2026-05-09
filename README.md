@@ -66,7 +66,7 @@ ELT PIPELINE
 
 - Snowflake (Data Warehouse)
 - SQL (Transformation & Modelling)
-- S3 (Data Source simulation)
+- S3 (Data Source)
 - Medallion Architecture (Bronze/Silver/Gold)
 - Star Schema Data Modelling
 
