@@ -47,6 +47,21 @@ T = Transform
 ```
 
 
+```
+
+ELT PIPELINE
+├── Bronze (raw ingestion)
+├── Silver (cleaning + validation)
+├── Gold (star schema model)
+└── Production Layer
+    ├── Logging
+    ├── Monitoring
+    ├── Alerts (conceptual)
+    └── Retry strategy
+
+```
+
+
 ⚙️ Tech Stack
 
 - Snowflake (Data Warehouse)
