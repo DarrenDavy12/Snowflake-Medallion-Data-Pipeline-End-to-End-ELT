@@ -1,0 +1,28 @@
+-- Monitioring Snowflake Tasks 
+
+-- View task history 
+
+SELECT *
+FROM TABLE(INFORMATION_SCHEMA.TASK_HISTORY())
+ORDER BY SCHEDULED_TIME DESC;
+
+
+-- Check failures 
+
+SELECT *
+FROM TABLE(INFORMATION_SCHEMA.TASK_HISTORY())
+WHERE STATE = 'FAILED';
+
+
+
+-- View exexcution times 
+
+SELECT
+    NAME,
+    STATE,
+    SCHEDULED_TIME,
+    COMPLETED_TIME
+FROM TABLE(INFORMATION_SCHEMA.TASK_HISTORY());
+
+
+
