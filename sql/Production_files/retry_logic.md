@@ -6,6 +6,9 @@ Conceptually, retry logic ensures:
 
 transient failures (network, load issues) are retried
 pipelines don’t fail permanently on temporary issues
+
+<br>
+
 Example behaviour:
 Attempt 1 → fail
 Retry 1 → fail
