@@ -8,19 +8,27 @@
 
 CREATE OR REPLACE TASK task_silver_load
 WAREHOUSE = compute_wh
-SCHEDULE = 'USING CRON 0 0 * * * UTC'  -- midnight UTC
+SCHEDULE = 'USING CRON 0 0 * * * UTC'
 AS
-INSERT INTO SILVER.CUSTOMERS_CLEAN
-SELECT DISTINCT
-    ID,
-    TRIM(first_name),
-    TRIM(last_name),
-    LOWER(email),
-    age,
-    city,
-    load_timestamp
-FROM BRONZE.CUSTOMERS_RAW;
-
+MERGE INTO SILVER.CUSTOMERS_CLEAN target
+USING (
+    SELECT DISTINCT
+        ID,
+        TRIM(first_name) AS first_name,
+        TRIM(last_name) AS last_name,
+        LOWER(email) AS email,
+        age,
+        city,
+        load_timestamp
+    FROM BRONZE.CUSTOMERS_RAW
+    WHERE load_timestamp > (
+        SELECT COALESCE(MAX(load_timestamp), '1900-01-01')
+        FROM SILVER.CUSTOMERS_CLEAN
+    )
+) source
+ON target.ID = source.ID
+WHEN MATCHED THEN UPDATE SET *
+WHEN NOT MATCHED THEN INSERT *;
 
 
 -- Silver → Gold
