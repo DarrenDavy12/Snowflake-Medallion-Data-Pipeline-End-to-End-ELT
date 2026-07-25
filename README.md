@@ -19,6 +19,7 @@ This project demonstrates an end-to-end data engineering pipeline using Snowflak
 
 The pipeline includes data ingestion, transformation, modelling, and validation layers designed to simulate a real-world data warehouse environment.
 
+<br>
 
 ### 🏗️ Architecture
 
