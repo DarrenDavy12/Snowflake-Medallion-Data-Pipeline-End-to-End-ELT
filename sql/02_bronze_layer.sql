@@ -11,7 +11,8 @@ CREATE TABLE BRONZE.CUSTOMERS_RAW (
     last_name varchar(50),
     email varchar(255),
     age int,
-    city varchar(255)
+    city varchar(255),
+    load_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 /* 
