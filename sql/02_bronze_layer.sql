@@ -50,7 +50,7 @@ GROUP BY ID
 HAVING COUNT(*) > 1;
 
 /*
--- Need to raise an error for production, if any duplicates 
+-- Need to raise an error warning in production, if any duplicates > 0 then raise
 DECLARE
     duplicate_count INT;
 BEGIN
