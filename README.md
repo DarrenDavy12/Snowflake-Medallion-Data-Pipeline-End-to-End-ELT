@@ -1,5 +1,10 @@
-# Snowflake Medallion Architecture Data Pipeline (End-to-End ELT Project)
 
+# retail/e-commerce sales analytics warehouse
+<br>
+
+Snowflake Medallion Architecture Data Pipeline (End-to-End ELT Project)
+
+<br>
 
 📖 Overview
 
