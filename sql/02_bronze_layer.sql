@@ -42,14 +42,24 @@ COPY INTO BRONZE.CUSTOMERS_RAW
 SELECT * FROM BRONZE.CUSTOMERS_RAW 
 LIMIT 5; -- select first 5 rows from table 
 
--- check duplicates in raw data
-SELECT 
-    ID, 
-    COUNT(*)
-FROM BRONZE.CUSTOMERS_RAW
-GROUP BY ID
-HAVING COUNT(*) > 1; 
 
+-- check duplicates in raw data, okay in developement, but for production need to change to code just below.
+SELECT COUNT(*) AS duplicate_count 
+FROM BRONZE.CUSTOMERS_RAW 
+GROUP BY ID 
+HAVING COUNT(*) > 1;
+
+/*
+-- Need to raise an error for production, if any duplicates 
+DECLARE
+    duplicate_count INT;
+BEGIN
+    SELECT COUNT(*) INTO duplicate_count FROM BRONZE.CUSTOMERS_RAW;
+    IF duplicate_count > 0 THEN
+        RAISE EXCEPTION 'Duplicates found in raw data: %', duplicate_count;
+    END IF;
+END;
+*/
 
 -- check missing emails 
 SELECT 
