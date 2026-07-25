@@ -31,6 +31,13 @@ The Bronze layer stores raw ingested data from external sources without modifica
 
 - CUSTOMERS_RAW
 
+## If it breaks, how would you know? How would you recover?
+
+"Duplicates would cause x — we'd catch it with y check"
+"If the load fails partway, we'd truncate/swap/retry to stay consistent"
+"Timestamps let us track when each batch came in"
+"Run/batch/file_name IDs let us trace data back to its source file"
+
 ---
 
 # Silver Layer
