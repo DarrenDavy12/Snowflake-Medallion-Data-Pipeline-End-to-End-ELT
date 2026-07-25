@@ -30,13 +30,19 @@ The Bronze layer stores raw ingested data from external sources without modifica
 ## Table
 
 - CUSTOMERS_RAW
+<br>
 
+# Important reasons for code choices: 
 ## If it breaks, how would you know? How would you recover?
 
-"Duplicates would cause x — we'd catch it with y check"
+"Duplicates would cause x or y to happen so we'd catch it with z check"
+<br>
 "If the load fails partway, we'd truncate/swap/retry to stay consistent"
+<br>
 "Timestamps let us track when each batch came in"
+<br>
 "Run/batch/file_name IDs let us trace data back to its source file"
+<br>
 
 ---
 
