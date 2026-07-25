@@ -19,8 +19,11 @@ SKIP_HEADER is NOT stored permanently in the table
 It only applies during that specific COPY INTO execution
 */
 
--- extract from source into "BRONZE.CUSTOMERS_RAW" table, (in this case aws s3 bucket)
-COPY INTO BRONZE.CUSTOMERS_RAW
+-- clean the 'BRONZE.CUSTOMERS_RAW' table for every run using 'TRUNCATE' then extract from source using 'COPY INTO' "BRONZE.CUSTOMERS_RAW" table, (in this case aws s3 bucket).
+
+TRUNCATE TABLE BRONZE.CUSTOMERS_RAW;
+
+COPY INTO BRONZE.CUSTOMERS_RAW 
     FROM s3://snowflake-assignments-mc/gettingstarted/customers.csv
     file_format = (type = csv -- format is csv 
                     field_delimiter = ',' -- comma separated for csv's
