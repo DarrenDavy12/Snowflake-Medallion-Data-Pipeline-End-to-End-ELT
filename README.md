@@ -1,19 +1,26 @@
 
 # retail/e-commerce sales analytics warehouse
-<br>
-
-Snowflake Medallion Architecture Data Pipeline (End-to-End ELT Project)
 
 <br>
 
-📖 Overview
+## Snowflake Medallion Architecture Data Pipeline (End-to-End ELT Project)
+
+<br>
+
+### Business use cases: which customers are most valuable?, which products sell? and what is the revenue trends over time?
+
+### I built this to simulate a retail company needing a single source of truth for order and customer reporting
+
+<br> 
+
+### 📖 Overview
 
 This project demonstrates an end-to-end data engineering pipeline using Snowflake, implementing a medallion architecture (Bronze, Silver, Gold) and a dimensional star schema model for analytics.
 
 The pipeline includes data ingestion, transformation, modelling, and validation layers designed to simulate a real-world data warehouse environment.
 
 
-🏗️ Architecture
+### 🏗️ Architecture
 
 ```mermaid
 flowchart TD
@@ -67,7 +74,7 @@ ELT PIPELINE
 ```
 
 
-⚙️ Tech Stack
+#### ⚙️ Tech Stack
 
 - Snowflake (Data Warehouse)
 - SQL (Transformation & Modelling)
@@ -76,7 +83,7 @@ ELT PIPELINE
 - Star Schema Data Modelling
 
 
-🔄 Pipeline Flow
+#### 🔄 Pipeline Flow
 
 1. Data ingested into Bronze layer (raw data)
 2. Cleaned and checked type/format, duplicates, and nulls in Silver layer
@@ -84,7 +91,7 @@ ELT PIPELINE
 4. Analytical models created for reporting
 
 
-🧱 Data Model
+#### 🧱 Data Model
 
 - DIM_CUSTOMERS
 - DIM_PRODUCTS
@@ -92,7 +99,7 @@ ELT PIPELINE
 - FACT_ORDERS
 
 
-📊 Key Features
+#### 📊 Key Features
 
 - Medallion architecture implementation
 - Star schema design
@@ -101,7 +108,7 @@ ELT PIPELINE
 - Business-ready analytical models
 
 
-🚀 How to Run
+###### 🚀 How to Run
 
 1. Execute scripts in /sql folder in order
 2. Load sample data into Snowflake
@@ -109,7 +116,7 @@ ELT PIPELINE
 4. Query Gold layer for analytics
 
 
-📌 Key Learnings
+###### 📌 Key Learnings
 
 - Data modelling using star schema
 - ELT pipeline design in Snowflake
