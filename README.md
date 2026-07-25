@@ -40,7 +40,7 @@ L = Load
 T = Transform
     Transform data inside Snowflake:
     - Cleaning
-    - Validation
+    - null checks on keys, duplicate detection, type/format checking 
     - MERGE logic
     - Star schema modelling
     - Aggregations
