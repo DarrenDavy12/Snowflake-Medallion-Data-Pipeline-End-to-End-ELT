@@ -12,8 +12,12 @@ CREATE TABLE BRONZE.CUSTOMERS_RAW (
     email varchar(255),
     age int,
     city varchar(255), 
-    load_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Now the timestamp is set the moment each row is inserted, automatically. No manual UPDATE needed.
+    load_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Now the timestamp is set the moment each row is inserted, automatically. No manual UPDATE needed.
     -- Usually it is best practice to define timestamp column in ingestion stage when creating BRONZE.CUSTOMERS_RAW
+    
+    -- 'DATE DEFAULT CURRENT_DATE' and created 'run_id' to show name of day when reloaded data from yesterday's file. 
+    load_date DATE DEFAULT CURRENT_DATE, 
+    run_id VARCHAR(255) -- or can name this column batch_id, or file_name 
 );
 
 /* 
