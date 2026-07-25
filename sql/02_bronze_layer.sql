@@ -11,8 +11,9 @@ CREATE TABLE BRONZE.CUSTOMERS_RAW (
     last_name varchar(50),
     email varchar(255),
     age int,
-    city varchar(255),
-    load_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    city varchar(255), 
+    load_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Now the timestamp is set the moment each row is inserted, automatically. No manual UPDATE needed.
+    -- Usually it is best practice to define timestamp column in ingestion stage when creating BRONZE.CUSTOMERS_RAW
 );
 
 /* 
@@ -51,17 +52,6 @@ SELECT
     *
 FROM BRONZE.CUSTOMERS_RAW
 WHERE email IS NULL;
-
--- usually it is best practice to define timestamp column in ingestion stage when creating BRONZE.CUSTOMERS_RAW
--- added TIMESTAMP to BRONZE.CUSTOMERS_RAW
-ALTER TABLE BRONZE.CUSTOMERS_RAW
-ADD COLUMN load_timestamp TIMESTAMP;
-
-
--- set TIMESTAMP to CURRENT_TIMESTAMP
-UPDATE BRONZE.CUSTOMERS_RAW
-SET load_timestamp = CURRENT_TIMESTAMP
-WHERE load_timestamp IS NULL;
 
 
 -- made ID column a primary key 
