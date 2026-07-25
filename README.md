@@ -3,7 +3,7 @@
 
 <br>
 
-## Snowflake Medallion Architecture Data Pipeline (End-to-End ELT Project)
+## ❄️🔨 Snowflake Medallion Architecture Data Pipeline (End-to-End ELT Project)
 
 <br>
 
