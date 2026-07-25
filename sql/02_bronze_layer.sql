@@ -33,7 +33,8 @@ COPY INTO BRONZE.CUSTOMERS_RAW
 
                     
 -- validate raw data extraction 
-SELECT * FROM BRONZE.CUSTOMERS_RAW LIMIT 5; -- select first 5 rows from table 
+SELECT * FROM BRONZE.CUSTOMERS_RAW 
+LIMIT 5; -- select first 5 rows from table 
 
 -- check duplicates in raw data
 SELECT 
