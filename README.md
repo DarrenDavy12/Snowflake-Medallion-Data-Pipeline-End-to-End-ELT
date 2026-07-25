@@ -51,7 +51,7 @@ T = Transform
 
 ELT PIPELINE
 ├── Bronze (raw ingestion)
-├── Silver (cleaning + validation)
+├── Silver (cleaning + data checks)
 ├── Gold (star schema model)
 └── Production Layer
     ├── Logging
@@ -74,7 +74,7 @@ ELT PIPELINE
 🔄 Pipeline Flow
 
 1. Data ingested into Bronze layer (raw data)
-2. Cleaned and validated in Silver layer
+2. Cleaned and checked type/format, duplicates, and nulls in Silver layer
 3. Transformed into Gold layer (fact + dimension tables)
 4. Analytical models created for reporting
 
@@ -92,7 +92,7 @@ ELT PIPELINE
 - Medallion architecture implementation
 - Star schema design
 - Incremental processing logic
-- Data quality validation checks
+- Data quality checks
 - Business-ready analytical models
 
 
@@ -108,7 +108,7 @@ ELT PIPELINE
 
 - Data modelling using star schema
 - ELT pipeline design in Snowflake
-- Data quality and validation techniques
+- Data quality techniques
 - Incremental data processing concepts
 
 
