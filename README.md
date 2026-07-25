@@ -17,7 +17,7 @@
 
 This project demonstrates an end-to-end data engineering pipeline using Snowflake, implementing a medallion architecture (Bronze, Silver, Gold) and a dimensional star schema model for analytics.
 
-The pipeline includes data ingestion, transformation, modelling, and data quailty layers designed to simulate a real-world data warehouse environment.
+The pipeline includes data ingestion, transformation, modelling, and data quality layers designed to simulate a real-world data warehouse environment.
 
 <br>
 
