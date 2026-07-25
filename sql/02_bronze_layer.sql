@@ -19,8 +19,10 @@ SKIP_HEADER is NOT stored permanently in the table
 It only applies during that specific COPY INTO execution
 */
 
--- clean the 'BRONZE.CUSTOMERS_RAW' table for every run using 'TRUNCATE' then extract from source using 'COPY INTO' "BRONZE.CUSTOMERS_RAW" table, (in this case aws s3 bucket).
+-- clean the 'BRONZE.CUSTOMERS_RAW' table for every run using 'TRUNCATE' then extract from source using 'COPY INTO' "BRONZE.CUSTOMERS_RAW" table, (in this case aws s3 bucket).  
+-- design choice here depends here "should Bronze keep history of every load, or just the latest?" Most real pipelines: just the latest (stateless). Some: keep everything (append-only audit log).
 
+-- choice: reload on every run because i'm not working with large datasets.
 TRUNCATE TABLE BRONZE.CUSTOMERS_RAW;
 
 COPY INTO BRONZE.CUSTOMERS_RAW 
