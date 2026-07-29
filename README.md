@@ -13,6 +13,8 @@
 
 ### 📊 Business Solution: "I built a centralized analytical warehouse in Snowflake that provides a single source of truth for sales reporting."
 
+### 📃 Check out my docs folder which briefly goes over deep points on why I chose this design architecture, also its good learning and notes to help me too!  
+
 <br> 
 
 ### 📖 Overview
