@@ -11,7 +11,7 @@
 
 ### Business use cases: Which customers are most valuable?, which products sell? and what is the revenue trends over time?
 
-### I built this to simulate a retail company needing a single source of truth for order and customer reporting
+### Business Solution: "I built a centralized analytical warehouse in Snowflake that provides a single source of truth for sales reporting."
 
 <br> 
 
