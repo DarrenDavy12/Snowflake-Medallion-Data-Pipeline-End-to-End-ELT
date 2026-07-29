@@ -1,6 +1,6 @@
 # Data Model Explanation
 
-## Overview
+## Overview: This approach is to aim for common enterprise data warehouse design practices.
 
 This project uses a dimensional modelling approach to support analytical querying and reporting workloads in Snowflake.
 
@@ -112,4 +112,4 @@ Dimensional modelling improves:
 - Dashboard and BI integration
 - Scalability for future reporting requirements
 
-This approach aligns with common enterprise data warehouse design practices.
+
