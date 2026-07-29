@@ -7,7 +7,7 @@
 
 <br>
 
-### Scenario: The company needs reliable sales analytics
+### Business problem: A retail company has customer, product, and order data but reporting is inconsistent because data is spread across operational sources.
 
 ### Business use cases: Which customers are most valuable?, which products sell? and what is the revenue trends over time?
 
