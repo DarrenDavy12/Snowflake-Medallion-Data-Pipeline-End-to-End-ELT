@@ -7,11 +7,11 @@
 
 <br>
 
-### Business problem: A retail company has customer, product, and order data but reporting is inconsistent because data is spread across operational sources.
+### 🎯 Business problem: "A retail company has customer, product, and order data but reporting is inconsistent because data is spread across operational sources."
 
-### Business use cases: Which customers are most valuable?, which products sell? and what is the revenue trends over time?
+### 🧠 Business use cases: "Which customers are most valuable?, which products sell? and what is the revenue trends over time?"
 
-### Business Solution: "I built a centralized analytical warehouse in Snowflake that provides a single source of truth for sales reporting."
+### 📊 Business Solution: "I built a centralized analytical warehouse in Snowflake that provides a single source of truth for sales reporting."
 
 <br> 
 
