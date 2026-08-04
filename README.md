@@ -1,5 +1,5 @@
 
-# retail/e-commerce sales analytics warehouse
+# retail/e-commerce sales snowflake analytics warehouse
 
 <br>
 
@@ -8,13 +8,13 @@
 <br>
 
 ### 🎯 Business problem: 
-A retail company has customer, product, and order data but reporting is inconsistent because data is spread across operational sources.
+A business with customer data spread across transactional systems (CRM, orders, support tickets) can't reliably join or aggregate it for analytics — data arrives in different formats, updates conflict, and there's no single source of truth for what a "customer" actually is.
 
 ### 🧠 Business use cases: 
-Analysts and product managers need to know "Which customers are most valuable?, which products sell? and what is the revenue trends over time?"
+Analysts and product managers need to segment customers (high-value, churn-risk, etc.) and track metrics (LTV, churn rate, feature adoption) over time. They need a query-able, deduplicated, historically accurate customer dimension that they can join against transaction tables without second-guessing the data.
 
 ### 📊 Business Solution: 
-"I built a centralized analytical warehouse in Snowflake that provides a single source of truth for sales reporting."
+This ELT pipeline lands raw customer records in a Bronze layer, deduplicates and enriches them in Silver (enforcing a single customer identity), and exposes clean historical tables in Gold for analytics. Snowflake's native data sharing and time-travel tables mean the whole process stays inside one platform — no ETL orchestrator or external tooling overhead — which is a practical fit for a small analytics team.
 
 ---
 
