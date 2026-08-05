@@ -14,7 +14,7 @@ A business with customer data spread across transactional systems (CRM, orders, 
 Analysts and product managers need to segment customers high-value, churn-risk, and track metrics, churn rate, feature adoption over time. They need a query-able, deduplicated, historically accurate customer dimension that they can join against transaction tables without second-guessing the data.
 
 ### 📊 Business Solution: 
-This ELT pipeline lands raw customer records in a Bronze layer, deduplicates and enriches them in Silver enforcing a single customer identity, and exposes clean historical tables in Gold for analytics. Snowflake's native data sharing and time-travel tables mean the whole process stays inside one platform — no ETL orchestrator or external tooling overhead  which is a practical fit for a small analytics team.
+This ELT pipeline lands raw customer records in a Bronze layer, deduplicates and enriches them in Silver enforcing a single customer identity, and exposes clean historical tables in Gold for analytics. Snowflake's native data sharing and time-travel tables mean the whole process stays inside one platform, no ETL orchestrator or external tooling overhead  which is a practical fit for a small analytics team.
 
 ---
 
